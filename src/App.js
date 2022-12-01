@@ -1,24 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Pixels from './components/Pixels';
+import { BsEmojiSunglasses } from "react-icons/bs";
+import { BsEmojiSunglassesFill } from "react-icons/bs";
+import { useState } from 'react';
+import { ColourProvider } from './context/ColourContext';
+import Footer from './components/Footer';
 
 function App() {
+
+  const lightColour = <BsEmojiSunglasses/>
+  const lightColourCode = "#FAF7F0";
+  const darkColourCode = "#06283D";
+
+  const [ clicked, setClicked ] = useState(lightColour);
+  const [ bkgColour, setColour ] = useState(lightColourCode);
+  
+
+  const toggleHandler = (themeColour) => {
+    setColour(themeColour);
+    setClicked(!clicked);
+  };
+
   return (
+    <ColourProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main style={{"backgroundColor": bkgColour}}>
+        <div className='wrapper'>
+          <div className="toggleBtnContainer">
+            {
+              clicked ? <button className="toggleBtn" onClick={() => toggleHandler(darkColourCode)}>{<BsEmojiSunglassesFill className="icon"/>}</button> :
+              <button className="toggleBtn" onClick={() => toggleHandler(lightColourCode)} >{<BsEmojiSunglasses className="icon"/>}</button>
+            }       
+          </div>
+          <Header bkgColour={bkgColour} lightColourCode={lightColourCode} darkColourCode={darkColourCode}/>
+          <Pixels />
+        </div>
+        <Footer/>
+      </main>
     </div>
+    </ColourProvider>
   );
 }
 

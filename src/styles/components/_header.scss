@@ -1,0 +1,14 @@
+.header {
+  margin-top: 50px;
+  h1 {
+    letter-spacing: 0.2rem;
+    margin-bottom: 30px;
+  }
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+  }
+}
