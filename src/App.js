@@ -1,13 +1,15 @@
-import './App.css';
+// import './App.css';
 import Header from './components/Header';
 import Pixels from './components/Pixels';
 import { BsEmojiSunglasses } from "react-icons/bs";
 import { BsEmojiSunglassesFill } from "react-icons/bs";
-import { useState } from 'react';
-import { ColourProvider } from './context/ColourContext';
+import { useContext, useState } from 'react';
 import Footer from './components/Footer';
+import ColourContext from './context/ColourContext';
 
 function App() {
+
+  const { resetHandler } = useContext(ColourContext);
 
   const lightColour = <BsEmojiSunglasses/>
   const lightColourCode = "#FAF7F0";
@@ -16,14 +18,14 @@ function App() {
   const [ clicked, setClicked ] = useState(lightColour);
   const [ bkgColour, setColour ] = useState(lightColourCode);
   
-
   const toggleHandler = (themeColour) => {
     setColour(themeColour);
     setClicked(!clicked);
   };
 
+ 
+
   return (
-    <ColourProvider>
     <div className="App">
       <main style={{"backgroundColor": bkgColour}}>
         <div className='wrapper'>
@@ -35,11 +37,11 @@ function App() {
           </div>
           <Header bkgColour={bkgColour} lightColourCode={lightColourCode} darkColourCode={darkColourCode}/>
           <Pixels />
+          <button style={{"backgroundColor": bkgColour === lightColourCode ? darkColourCode : lightColourCode, "color": bkgColour === darkColourCode ? darkColourCode  : lightColourCode }} className='resetBtn' onClick={resetHandler}>Reset</button>
         </div>
-        <Footer/>
       </main>
+      <Footer/>
     </div>
-    </ColourProvider>
   );
 }
 

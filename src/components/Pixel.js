@@ -1,20 +1,22 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ColourContext from "../context/ColourContext";
 
-const Pixel = ({pixel, index}) => {
+const Pixel = () => {
 
-    const { colourCode } = useContext(ColourContext);//come from colorPicked state
+    const { colourCode, isReset } = useContext(ColourContext); //it comes from colorPicked state
 
-    const [ colourSelected, setColourSelected ] = useState(colourCode);
-
-    const colourSetted = colourSelected;
+    const [ colourSelected, setColourSelected ] = useState('');
 
     const colourPaintHandler = (paintColour) => {
-        setColourSelected(paintColour)
+        setColourSelected(paintColour);
     };
 
+    useEffect(() => {
+        setColourSelected('');
+    }, [isReset]);
+
     return (
-        <div className="pixel" style={{"backgroundColor": colourSelected ? colourSetted : "lightgray"}} onClick={() => colourPaintHandler(colourCode)}></div>
+        <div className="pixel" style={{"backgroundColor": colourSelected ? colourSelected : "lightgray"}} onClick={() => colourPaintHandler(colourCode)}></div>
     );
 };
 

@@ -11,7 +11,7 @@ const ColourPickerEl = ({colour}) => {
 
     const colourPickerHandler = (colour) => {
         setColourPicked(colour);
-
+        
         //Call Function from Context
         //Pass state value
         getColourCode(colourPicked);

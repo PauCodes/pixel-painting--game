@@ -4,7 +4,6 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: "Anton", sans-serif;
 }
 
 body {
@@ -293,10 +292,12 @@ ul {
 .App {
   height: 100vh;
   position: relative;
+  text-align: center;
 }
 
 main {
   height: 100vh;
+  overflow: auto;
 }
 
 .wrapper {
@@ -319,10 +320,24 @@ main {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    font-size: 2rem;
-    .icon {
-      display: flex;
-      margin: 0 auto;
-    }
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+button.resetBtn {
+  width: 100px;
+  background-color: #faf7f0;
+  color: #06283d;
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  border-radius: 10px;
+
+  @media (max-width: 775px) {
+    margin-bottom: 100px;
   }
 }

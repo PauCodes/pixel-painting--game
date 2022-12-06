@@ -9,7 +9,7 @@ const Header = ({ bkgColour, lightColourCode, darkColourCode}) => {
 
     return (
         <div className="header">
-            <h1 style={{"color": bkgColour === lightColourCode ? darkColourCode : lightColourCode}}>Choose a colour</h1>
+            <h1 style={{"color": bkgColour === lightColourCode ? darkColourCode : lightColourCode}}>Pick a colour!</h1>
             <div className="btnContainer">
             {
                 coloursArray.map((colour) => {

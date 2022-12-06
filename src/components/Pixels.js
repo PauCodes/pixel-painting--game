@@ -2,15 +2,13 @@ import Pixel from "./Pixel";
 
 const Pixels = () => {
 
-    const pixels = [];
-
-    for (let i = 0; i < 100; i++ ) pixels.push(<Pixel />)
+     const pixels = Array(100).fill();//to create an array     
 
     return (
         <div className="pixelsContainer">
             {
                 pixels.map((pixel, index) => {
-                    return <div onClick={() => console.log(index)}>{<Pixel pixel={pixel} index={index}  />}</div>
+                    return <div>{<Pixel pixel={pixel} index={index} style={{'backgroundColor': 'black'}} />}</div>
                 })
             }
         </div>

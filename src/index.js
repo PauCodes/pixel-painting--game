@@ -5,12 +5,15 @@ import './styles/main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
+import { ColourProvider } from './context/ColourContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ColourProvider>
     <App />
+    </ColourProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
