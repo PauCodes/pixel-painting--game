@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import ColourContext from "../context/ColourContext";
+import Button from "./Button";
 
 const ColourPickerEl = ({colour}) => {
 
@@ -18,7 +19,7 @@ const ColourPickerEl = ({colour}) => {
     };
 
     return (
-        <button className={colour.name} style={{'backgroundColor': colour.code}} onClick={() => colourPickerHandler(colourPicked)}></button>
+        <Button className={`${colour.name} colourBtn` } style={{'backgroundColor': colour.code}} onClick={() => colourPickerHandler(colourPicked)}/>
     );
 };
 

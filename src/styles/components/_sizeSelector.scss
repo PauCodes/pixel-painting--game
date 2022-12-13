@@ -1,0 +1,39 @@
+.sizeSelectorContainer {
+  h2 {
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    @media (max-width: 375px) {
+      font-size: 1.1rem;
+    }
+  }
+  .pixelBtnContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 30px 0;
+
+    @media (max-width: 504px) {
+      flex-direction: column;
+    }
+
+    button.pixelBtn {
+      width: calc((70% / 2) - 30px);
+      height: 130px;
+      margin: 15px;
+      font-size: 1.2rem;
+      letter-spacing: 0.2rem;
+
+      @media (max-width: 535px) {
+        font-size: 1rem;
+        height: 125px;
+      }
+
+      @media (max-width: 504px) {
+        width: 70%;
+      }
+    }
+  }
+}

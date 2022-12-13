@@ -1,9 +1,16 @@
-.pixelsContainer {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  margin: 50px auto;
+.boardContainer {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  @media (max-width: 450px) {
-    grid-template-columns: repeat(5, 1fr);
+  .pixelsContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+    @media (max-width: 420px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 }
