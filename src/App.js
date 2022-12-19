@@ -3,14 +3,11 @@ import Header from './components/Header';
 import Pixels from './components/Pixels';
 import { BsEmojiSunglasses } from "react-icons/bs";
 import { BsEmojiSunglassesFill } from "react-icons/bs";
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Footer from './components/Footer';
-import ColourContext from './context/ColourContext';
 import Button from './components/Button';
 
 function App() {
-
-  const { resetHandler } = useContext(ColourContext);
 
   const darkColour = <BsEmojiSunglassesFill/>
   const lightColourCode = "#FAF7F0";
