@@ -1,11 +1,11 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Pixel from "./Pixel";
 import ColourContext from '../context/ColourContext';
 import Button from './Button';
 
 const Pixels = ({ bkgColour, lightColourCode, darkColourCode}) => {
 
-    const { resetHandler, isClicked, setIsClicked, pixelArray, setPixelArray } = useContext(ColourContext);
+    const { resetHandler, isClicked, pixelArray } = useContext(ColourContext);
 
 
     //  const pixels = Array(100).fill();//to create an array   
